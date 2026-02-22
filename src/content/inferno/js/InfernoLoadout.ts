@@ -589,6 +589,16 @@ export class InfernoLoadout {
         player.stats.defence = 1;
         player.currentStats.defence = 1;
         break;
+      case "acb":
+        player.stats.prayer = 78;
+        player.currentStats.prayer = 78;
+        player.stats.defence = 75;
+        player.currentStats.defence = 75;
+        player.stats.hitpoint = 94;
+        player.currentStats.hitpoint = 94;
+        player.stats.range = 96;
+        player.currentStats.range = 109;
+        break;
     }
   }
 
