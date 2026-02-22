@@ -307,6 +307,54 @@ export class InfernoLoadout {
     };
   }
 
+  loadoutTom() {
+    return {
+      equipment: {
+        weapon: new AncientStaff(),
+        offhand: new CrystalShield(),
+        helmet: new SaradominCoif(),
+        necklace: new OccultNecklace(),
+        cape: new AvasAssembler(),
+        ammo: new RubyBoltsE(),
+        chest: new AhrimsRobetop(),
+        legs: new AhrimsRobeskirt(),
+        feet: new PegasianBoots(),
+        gloves: new BarrowsGloves(),
+        ring: new RingOfSufferingImbued(),
+      },
+      inventory: [
+        new Blowpipe(),
+        new RuneCrossbow(),
+        new DiamondBoltsE(),
+        new JusticiarFaceguard(),
+        new NecklaceOfAnguish(),
+        new SaradominBody(),
+        new SaradominChaps(),
+        new JusticiarChestguard(),
+        null,
+        new SaradominBrew(),
+        new SuperRestore(),
+        new JusticiarLegguards(),
+        new SaradominBrew(),
+        new SaradominBrew(),
+        new SuperRestore(),
+        new SuperRestore(),
+        new SaradominBrew(),
+        new SaradominBrew(),
+        new SuperRestore(),
+        new SuperRestore(),
+        new BastionPotion(),
+        new StaminaPotion(),
+        new SuperRestore(),
+        new SuperRestore(),
+        new BastionPotion(),
+        new StaminaPotion(),
+        new SuperRestore(),
+        new SuperRestore(),
+      ],
+    };
+  }
+
 
   loadoutRcb() {
     return {
