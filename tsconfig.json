@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
+    "paths": {
+      "osrs-sdk": ["./osrs-sdk"]
+    },
     "sourceMap": true,
     "noImplicitAny": false,
     "module": "commonjs",
