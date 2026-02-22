@@ -6,6 +6,7 @@ import {
   AncientStaff,
   AvasAccumulator,
   AvasAssembler,
+  ArmadylCrossbow,
   BarrowsGloves,
   BastionPotion,
   BlackChinchompa,
@@ -24,6 +25,8 @@ import {
   DiamondBoltsE,
   DizanasQuiver,
   DragonArrows,
+  DragonBoltRuby,
+  DragonBoltDiamond,
   GuthixRobeTop,
   HolyBlessing,
   InfernalCape,
@@ -307,7 +310,8 @@ export class InfernoLoadout {
     };
   }
 
-  loadoutTom() {
+
+  loadoutRcb() {
     return {
       equipment: {
         weapon: new AncientStaff(),
@@ -355,8 +359,7 @@ export class InfernoLoadout {
     };
   }
 
-
-  loadoutRcb() {
+  loadoutAcb() {
     return {
       equipment: {
         weapon: new AncientStaff(),
@@ -364,7 +367,7 @@ export class InfernoLoadout {
         helmet: new SaradominCoif(),
         necklace: new OccultNecklace(),
         cape: new AvasAssembler(),
-        ammo: new RubyBoltsE(),
+        ammo: new DragonBoltRuby(),
         chest: new AhrimsRobetop(),
         legs: new AhrimsRobeskirt(),
         feet: new PegasianBoots(),
@@ -373,8 +376,8 @@ export class InfernoLoadout {
       },
       inventory: [
         new Blowpipe(),
-        new RuneCrossbow(),
-        new DiamondBoltsE(),
+        new ArmadylCrossbow(),
+        new DragonBoltDiamond(),
         new JusticiarFaceguard(),
         new NecklaceOfAnguish(),
         new SaradominBody(),
@@ -560,6 +563,9 @@ export class InfernoLoadout {
       case "rcb":
         loadout = this.loadoutRcb();
         break;
+      case "acb":
+        loadout = this.loadoutAcb();
+        break;
       case "max_melee":
         loadout = this.loadoutMaxMelee();
         break;
@@ -576,6 +582,7 @@ export class InfernoLoadout {
         ItemName.TWISTED_BOW,
         ItemName.BOWFA,
         ItemName.RUNE_CROSSBOW,
+        ItemName.ARMADYL_CROSSBOW,
       ]);
       loadout.equipment.weapon = loadout.inventory[bow] as Weapon;
       loadout.inventory[bow] = staff;

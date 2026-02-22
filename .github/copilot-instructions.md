@@ -2,6 +2,10 @@
 
 This is a TypeScript project for an **Inferno Trainer** application - a RuneScape game mechanic simulator/trainer focused on the Inferno minigame. Built with webpack and tested with Jest.
 
+## Useful links
+
+https://github.com/OldSchoolSDK/oldschool-cdn/tree/master/models
+
 ## Project Structure
 
 - **src/**: Main source code
