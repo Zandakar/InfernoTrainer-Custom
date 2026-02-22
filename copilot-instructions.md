@@ -1,6 +1,6 @@
 # Repository Overview
 
-This is a TypeScript project with a webpack-based build system and Jest testing framework.
+This is a TypeScript project for an **Inferno Trainer** application - a RuneScape game mechanic simulator/trainer focused on the Inferno minigame. Built with webpack and tested with Jest.
 
 ## Project Structure
 
@@ -13,7 +13,14 @@ This is a TypeScript project with a webpack-based build system and Jest testing 
   - `assets/`: Static assets
     - `fonts/`: RuneScape font files (WOFF/WOFF2)
     - `images/`: Image assets
-  - `content/`: Content modules (includes Inferno-related content)
+  - `content/`: Content modules for Inferno mechanics
+    - Inferno-specific game logic and simulations
+    - Prayer/combat mechanics
+    - Wave progression systems
+    - Boss mechanics (e.g., Zuk, line-of-sight calculations)
+  - `utils/`: Utility functions and helpers
+  - `components/`: UI components and views
+  - `models/`: Game state and data models
 
 - **test/**: Test configuration and test files
 
@@ -43,9 +50,23 @@ This is a TypeScript project with a webpack-based build system and Jest testing 
 - **Linting**: ESLint
 - **Formatting**: Prettier
 
+## Domain: RuneScape Inferno Minigame
+
+The Inferno is an end-game PvM (Player vs Monster) challenge in RuneScape featuring:
+
+- Progressive waves of increasingly difficult monsters
+- Prayer mechanics and combat rotations
+- Boss encounters (Zuk as final boss)
+- Line-of-sight mechanics and positioning
+- Game state tracking and progression
+
+This trainer helps players practice and understand Inferno mechanics through simulation.
+
 ## Key Features
 
-- Custom fonts (RuneScape-themed)
-- Game content modules (Inferno mechanics)
-- Simulation-based testing
+- Custom RuneScape-themed fonts and branding
+- Inferno wave simulation and mechanics
+- Combat/prayer system modeling
+- Boss AI and behavior simulation
 - Type-safe development with TypeScript
+- Comprehensive test coverage for game simulations
