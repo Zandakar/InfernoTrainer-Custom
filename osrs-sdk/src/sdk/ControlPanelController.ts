@@ -25,7 +25,7 @@ interface TabPosition {
   y: number;
 }
 
-const INVENTORY_OFFSET = 500
+const INVENTORY_OFFSET = 400
 
 const BASE_WIDTH = 33 * 7;
 const BASE_HEIGHT = 36 * 2 + 275;
