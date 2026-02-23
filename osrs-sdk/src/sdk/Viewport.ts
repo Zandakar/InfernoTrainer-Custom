@@ -217,10 +217,11 @@ export class Viewport {
     this.context.save();
     this.context.textAlign = "left";
 
-    // Draw flickering metronome square
+    // Draw flickering metronome square with tick counter
     const squareSize = 60;
     const centerX = width / 2;
     const centerY = height / 2 + height * 0.25;
+    const tickCount = (world.globalTickCounter % 4) + 1; // 1, 2, 3, 4
     const isWhiteSquare = world.globalTickCounter % 2 === 0;
     this.context.fillStyle = isWhiteSquare ? "white" : "black";
     this.context.fillRect(
@@ -238,6 +239,12 @@ export class Viewport {
       squareSize,
       squareSize,
     );
+    // Draw blue tick counter inside the square
+    this.context.fillStyle = "cyan";
+    this.context.font = "36px Arial";
+    this.context.textAlign = "center";
+    this.context.textBaseline = "middle";
+    this.context.fillText(tickCount.toString(), centerX, centerY);
 
     if (world.getReadyTimer > 0) {
       this.context.font = "72px OSRS";
