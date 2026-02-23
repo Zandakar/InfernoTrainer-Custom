@@ -25,6 +25,8 @@ interface TabPosition {
   y: number;
 }
 
+const INVENTORY_OFFSET = 500
+
 const BASE_WIDTH = 33 * 7;
 const BASE_HEIGHT = 36 * 2 + 275;
 
@@ -145,7 +147,7 @@ export class ControlPanelController {
       return { x: 15, y: mapHeight + spacer };
     } else {
       return {
-        x: width - 231 * scale - (Settings.menuVisible ? 232 : 0) + 28,
+        x: width - (INVENTORY_OFFSET + 150) * scale - (Settings.menuVisible ? 232 : 0) + 28,
         y: height - 72 * scale,
       };
     }
@@ -171,7 +173,7 @@ export class ControlPanelController {
       const x = i % 7;
       const y = Math.floor(i / 7);
       return {
-        x: width - 231 * scale + x * 33 * scale - (Settings.menuVisible ? 232 : 0),
+        x: width - INVENTORY_OFFSET * scale + x * 33 * scale - (Settings.menuVisible ? 232 : 0),
         y: height - 72 * scale + y * 36 * scale,
       };
     }
@@ -316,7 +318,7 @@ export class ControlPanelController {
     } else {
       // desktop compact
       return {
-        x: width - 188 * scale - (Settings.menuVisible ? 232 : 0),
+        x: width - INVENTORY_OFFSET * scale - (Settings.menuVisible ? 232 : 0),
         y: height - 72 * scale - 251 * scale,
       };
     }
@@ -336,7 +338,7 @@ export class ControlPanelController {
       const position = this.controlPosition(this.selectedControl);
       this.selectedControl.draw(context, this, position.x, position.y);
     }
-    
+
     // TODO: make this rendering configurable
     const boostPosition = this.boostPosition();
     this.boostPanel.draw(context, scale, boostPosition.x, boostPosition.y);

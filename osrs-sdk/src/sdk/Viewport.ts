@@ -80,7 +80,7 @@ export class Viewport {
 
   public components: Component[] = [];
 
-  constructor(private delegate: ViewportDelegate) {}
+  constructor(private delegate: ViewportDelegate) { }
 
   /**
    * Return all objects or world coordinates at the given position (relative to the top-left of the viewport).
@@ -216,6 +216,29 @@ export class Viewport {
     this.context.restore();
     this.context.save();
     this.context.textAlign = "left";
+
+    // Draw flickering metronome square
+    const squareSize = 60;
+    const centerX = width / 2;
+    const centerY = height / 2 + height * 0.25;
+    const isWhiteSquare = world.globalTickCounter % 2 === 0;
+    this.context.fillStyle = isWhiteSquare ? "white" : "black";
+    this.context.fillRect(
+      centerX - squareSize / 2,
+      centerY - squareSize / 2,
+      squareSize,
+      squareSize,
+    );
+    // Draw border so it's visible against any background
+    this.context.strokeStyle = isWhiteSquare ? "black" : "white";
+    this.context.lineWidth = 2;
+    this.context.strokeRect(
+      centerX - squareSize / 2,
+      centerY - squareSize / 2,
+      squareSize,
+      squareSize,
+    );
+
     if (world.getReadyTimer > 0) {
       this.context.font = "72px OSRS";
       this.context.textAlign = "center";
