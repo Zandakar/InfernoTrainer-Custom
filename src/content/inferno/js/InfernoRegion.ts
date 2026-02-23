@@ -540,8 +540,7 @@ export class InfernoRegion extends Region {
       }
       timer_time--;
       if (timer_time <= 0) {
-        timer_time = 210;
-        timer_mode = "Start Set Timer";
+        timer_time += 210;
       }
       document.getElementById("set_timer_time").innerText =
         String(Math.floor(timer_time / 60)) +
