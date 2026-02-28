@@ -68,6 +68,7 @@ import {
   UnitOptions,
   Weapon,
   ZaryteVambraces,
+  UltorRing,
 } from "osrs-sdk";
 import { filter, indexOf, map } from "lodash";
 
@@ -431,6 +432,55 @@ export class InfernoLoadout {
     };
   }
 
+  loadoutTom() {
+    return {
+      equipment: {
+        weapon: new AncientStaff(),
+        offhand: new CrystalShield(),
+        helmet: new MasoriMaskF(),
+        necklace: new OccultNecklace(),
+        cape: new AvasAccumulator(),
+        ammo: new DragonArrows(),
+        chest: new AhrimsRobeskirt(),
+        legs: new MasoriChapsF(),
+        feet: new PegasianBoots(),
+        gloves: new BarrowsGloves(),
+        ring: new UltorRing(),
+      },
+      inventory: [
+        new SaradominBrew(),
+        new SaradominBrew(),
+        new Vial(),
+        new Vial(),
+        new SaradominBrew(),
+        new SaradominBrew(),
+        new SaradominBrew(),
+        new Vial(), //8
+        new Vial(),
+        new Blowpipe(),
+        new SuperRestore(),
+        new SuperRestore(), //12
+        new NecklaceOfAnguish(),
+        new MasoriBodyF(),
+        new SuperRestore(),
+        new SuperRestore(), //16
+        null,
+        new TwistedBow(),
+        new Vial(),
+        new Vial(),
+        new Vial(),
+        new BastionPotion(),
+        new Vial(),
+        new Vial(),
+        new StaminaPotion(),
+        new Vial(),
+        new Vial(),
+        new Vial(),
+        new Vial(),
+      ],
+    };
+  }
+
   //         new Vial(),
   // new ArmadylCrossbow(),
   // new DragonBoltDiamond(),
@@ -599,6 +649,16 @@ export class InfernoLoadout {
         player.stats.range = 96;
         player.currentStats.range = 109;
         break;
+      case "tom":
+        player.stats.prayer = 78;
+        player.currentStats.prayer = 78;
+        player.stats.defence = 75;
+        player.currentStats.defence = 75;
+        player.stats.hitpoint = 94;
+        player.currentStats.hitpoint = 94;
+        player.stats.range = 96;
+        player.currentStats.range = 109;
+        break;
     }
   }
 
@@ -628,6 +688,9 @@ export class InfernoLoadout {
         break;
       case "acb":
         loadout = this.loadoutAcb();
+        break;
+      case "tom":
+        loadout = this.loadoutTom();
         break;
       case "max_melee":
         loadout = this.loadoutMaxMelee();
